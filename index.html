@@ -3,20 +3,22 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>AutoDrive Motors | Premium Cars</title>
-  <meta name="description" content="AutoDrive Motors - Browse quality used cars, compare models, and book a test drive." />
+  <title>VERIDIAN GLOBAL TRADE & COMPANY — EST. GLOBAL AGRI EXPORTS</title>
+  <meta name="description" content="VERIDIAN GLOBAL TRADE & COMPANY — EST. GLOBAL AGRI EXPORTS. Premium agricultural exports worldwide." />
+
   <style>
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
       font-family: Arial, Helvetica, sans-serif;
+      scroll-behavior: smooth;
     }
 
     body {
-      background: #f5f7fb;
-      color: #111827;
-      line-height: 1.6;
+      background: #081c15;
+      color: #ffffff;
+      overflow-x: hidden;
     }
 
     a {
@@ -25,343 +27,463 @@
     }
 
     .container {
-      width: min(1120px, 92%);
+      width: min(1180px, 92%);
       margin: auto;
     }
 
-    header {
-      background: #0f172a;
-      color: #ffffff;
-      position: sticky;
-      top: 0;
-      z-index: 10;
-      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.18);
+    /* Background effects */
+    .bg-blur {
+      position: fixed;
+      border-radius: 50%;
+      filter: blur(80px);
+      opacity: 0.35;
+      z-index: -1;
     }
 
-    .nav {
+    .bg1 {
+      width: 280px;
+      height: 280px;
+      background: #2d6a4f;
+      top: 70px;
+      left: -60px;
+    }
+
+    .bg2 {
+      width: 360px;
+      height: 360px;
+      background: #95d5b2;
+      right: -100px;
+      top: 300px;
+    }
+
+    .bg3 {
+      width: 300px;
+      height: 300px;
+      background: #40916c;
+      bottom: 60px;
+      left: 30%;
+    }
+
+    /* Header */
+    header {
+      position: sticky;
+      top: 0;
+      z-index: 999;
+      backdrop-filter: blur(16px);
+      background: rgba(8, 28, 21, 0.75);
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    .navbar {
       display: flex;
-      justify-content: space-between;
       align-items: center;
+      justify-content: space-between;
       padding: 18px 0;
     }
 
     .logo {
-      font-size: 24px;
+      font-size: 20px;
       font-weight: 800;
-      letter-spacing: 0.5px;
+      line-height: 1.2;
+      max-width: 350px;
+      color: #d8f3dc;
     }
 
     .logo span {
-      color: #38bdf8;
+      display: block;
+      font-size: 12px;
+      color: #95d5b2;
+      font-weight: 700;
+      letter-spacing: 1px;
+      margin-top: 4px;
     }
 
     .nav-links {
       display: flex;
-      gap: 24px;
+      gap: 22px;
       font-size: 15px;
       font-weight: 600;
+      color: #d8f3dc;
     }
 
     .nav-links a:hover {
-      color: #38bdf8;
-    }
-
-    .hero {
-      background: linear-gradient(rgba(15, 23, 42, 0.82), rgba(15, 23, 42, 0.82)),
-        url('https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?auto=format&fit=crop&w=1600&q=80') center/cover;
-      color: #ffffff;
-      min-height: 600px;
-      display: flex;
-      align-items: center;
-    }
-
-    .hero-content {
-      max-width: 720px;
-      padding: 80px 0;
-    }
-
-    .tagline {
-      display: inline-block;
-      background: rgba(56, 189, 248, 0.16);
-      border: 1px solid rgba(56, 189, 248, 0.45);
-      color: #bae6fd;
-      padding: 8px 14px;
-      border-radius: 999px;
-      margin-bottom: 18px;
-      font-weight: 700;
-      font-size: 14px;
-    }
-
-    .hero h1 {
-      font-size: clamp(38px, 6vw, 68px);
-      line-height: 1.05;
-      margin-bottom: 20px;
-    }
-
-    .hero p {
-      font-size: 18px;
-      color: #dbeafe;
-      max-width: 620px;
-      margin-bottom: 30px;
-    }
-
-    .hero-buttons {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 14px;
+      color: #95d5b2;
     }
 
     .btn {
       display: inline-flex;
       align-items: center;
       justify-content: center;
-      padding: 13px 22px;
-      border-radius: 12px;
-      font-weight: 800;
       border: none;
+      border-radius: 14px;
+      padding: 14px 24px;
+      font-weight: 800;
       cursor: pointer;
-      transition: 0.25s ease;
+      transition: 0.3s ease;
     }
 
     .btn-primary {
-      background: #38bdf8;
-      color: #082f49;
+      background: linear-gradient(135deg, #95d5b2, #52b788);
+      color: #081c15;
+      box-shadow: 0 12px 24px rgba(82, 183, 136, 0.3);
     }
 
     .btn-primary:hover {
-      background: #7dd3fc;
-      transform: translateY(-2px);
+      transform: translateY(-3px) scale(1.02);
     }
 
     .btn-outline {
-      border: 1px solid #ffffff;
+      background: transparent;
       color: #ffffff;
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      backdrop-filter: blur(12px);
     }
 
     .btn-outline:hover {
-      background: #ffffff;
-      color: #0f172a;
-      transform: translateY(-2px);
+      background: rgba(255, 255, 255, 0.08);
+      transform: translateY(-3px);
+    }
+
+    /* Hero */
+    .hero {
+      min-height: 100vh;
+      display: flex;
+      align-items: center;
+      position: relative;
+      padding: 80px 0 50px;
+    }
+
+    .hero-grid {
+      display: grid;
+      grid-template-columns: 1.15fr 0.85fr;
+      gap: 40px;
+      align-items: center;
+    }
+
+    .hero-tag {
+      display: inline-block;
+      background: rgba(149, 213, 178, 0.15);
+      border: 1px solid rgba(149, 213, 178, 0.25);
+      color: #d8f3dc;
+      padding: 8px 14px;
+      border-radius: 999px;
+      font-size: 14px;
+      margin-bottom: 18px;
+      font-weight: 700;
+    }
+
+    .hero h1 {
+      font-size: clamp(38px, 6vw, 70px);
+      line-height: 1.05;
+      margin-bottom: 18px;
+      color: #ffffff;
+    }
+
+    .hero p {
+      font-size: 18px;
+      color: #d8f3dc;
+      max-width: 650px;
+      margin-bottom: 28px;
+      line-height: 1.7;
+    }
+
+    .hero-actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-bottom: 30px;
+    }
+
+    .hero-stats {
+      display: flex;
+      gap: 18px;
+      flex-wrap: wrap;
+    }
+
+    .hero-stat {
+      background: rgba(255, 255, 255, 0.08);
+      backdrop-filter: blur(16px);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      padding: 18px 20px;
+      border-radius: 18px;
+      min-width: 150px;
+      box-shadow: 0 12px 30px rgba(0, 0, 0, 0.18);
+    }
+
+    .hero-stat h3 {
+      font-size: 26px;
+      color: #95d5b2;
+      margin-bottom: 6px;
+    }
+
+    .hero-stat p {
+      margin: 0;
+      font-size: 14px;
+      color: #d8f3dc;
+    }
+
+    /* 3D Product Showcase */
+    .showcase-wrap {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      perspective: 1200px;
+    }
+
+    .showcase-card {
+      width: 100%;
+      max-width: 460px;
+      background: linear-gradient(145deg, rgba(255,255,255,0.12), rgba(255,255,255,0.05));
+      border: 1px solid rgba(255,255,255,0.12);
+      backdrop-filter: blur(20px);
+      border-radius: 28px;
+      padding: 22px;
+      transform-style: preserve-3d;
+      transform: rotateY(-12deg) rotateX(8deg);
+      box-shadow: 0 30px 60px rgba(0,0,0,0.35);
+      transition: 0.4s ease;
+    }
+
+    .showcase-card:hover {
+      transform: rotateY(-4deg) rotateX(4deg) translateY(-8px);
+    }
+
+    .showcase-card img {
+      width: 100%;
+      height: 280px;
+      object-fit: cover;
+      border-radius: 20px;
+      margin-bottom: 18px;
+      box-shadow: 0 20px 35px rgba(0,0,0,0.28);
+    }
+
+    .showcase-card h3 {
+      font-size: 28px;
+      margin-bottom: 10px;
+      color: #ffffff;
+    }
+
+    .showcase-card p {
+      color: #d8f3dc;
+      margin-bottom: 14px;
+      line-height: 1.6;
+    }
+
+    .mini-badges {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 10px;
+    }
+
+    .mini-badges span {
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: rgba(149, 213, 178, 0.16);
+      border: 1px solid rgba(149, 213, 178, 0.2);
+      font-size: 13px;
+      color: #d8f3dc;
+      font-weight: 700;
     }
 
     section {
-      padding: 76px 0;
+      padding: 90px 0;
     }
 
     .section-title {
       text-align: center;
-      margin-bottom: 42px;
+      margin-bottom: 48px;
     }
 
     .section-title h2 {
-      font-size: 36px;
-      margin-bottom: 10px;
-      color: #0f172a;
+      font-size: 38px;
+      margin-bottom: 12px;
+      color: #ffffff;
     }
 
     .section-title p {
-      color: #64748b;
-      max-width: 660px;
+      max-width: 700px;
       margin: auto;
+      color: #d8f3dc;
+      font-size: 16px;
+      line-height: 1.7;
     }
 
-    .features {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 22px;
-    }
-
-    .feature-card,
-    .car-card,
-    .contact-card {
-      background: #ffffff;
-      border-radius: 20px;
-      padding: 24px;
-      box-shadow: 0 14px 30px rgba(15, 23, 42, 0.08);
-      border: 1px solid #e5e7eb;
-    }
-
-    .feature-icon {
-      width: 48px;
-      height: 48px;
-      border-radius: 14px;
-      background: #e0f2fe;
-      color: #0284c7;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      font-size: 24px;
-      margin-bottom: 16px;
-    }
-
-    .feature-card h3 {
-      font-size: 20px;
-      margin-bottom: 8px;
-    }
-
-    .feature-card p {
-      color: #64748b;
-      font-size: 15px;
-    }
-
-    .filters {
-      display: flex;
-      justify-content: center;
-      flex-wrap: wrap;
-      gap: 12px;
-      margin-bottom: 32px;
-    }
-
-    .filter-btn {
-      padding: 10px 18px;
-      border: 1px solid #cbd5e1;
-      background: #ffffff;
-      border-radius: 999px;
-      cursor: pointer;
-      font-weight: 700;
-      color: #334155;
-    }
-
-    .filter-btn.active,
-    .filter-btn:hover {
-      background: #0f172a;
-      color: #ffffff;
-      border-color: #0f172a;
-    }
-
-    .cars-grid {
+    /* Cards */
+    .grid-3 {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
       gap: 24px;
     }
 
-    .car-card {
-      overflow: hidden;
-      padding: 0;
+    .feature-card,
+    .product-card,
+    .info-card,
+    .contact-card {
+      background: rgba(255, 255, 255, 0.08);
+      backdrop-filter: blur(18px);
+      border: 1px solid rgba(255, 255, 255, 0.08);
+      border-radius: 24px;
+      padding: 24px;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.18);
+      transition: 0.35s ease;
+      transform-style: preserve-3d;
     }
 
-    .car-card img {
+    .feature-card:hover,
+    .product-card:hover,
+    .info-card:hover {
+      transform: translateY(-10px) rotateX(3deg);
+      box-shadow: 0 28px 55px rgba(0,0,0,0.26);
+    }
+
+    .icon {
+      width: 58px;
+      height: 58px;
+      border-radius: 18px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: linear-gradient(135deg, #95d5b2, #52b788);
+      color: #081c15;
+      font-size: 26px;
+      margin-bottom: 18px;
+      box-shadow: 0 12px 24px rgba(82, 183, 136, 0.25);
+    }
+
+    .feature-card h3,
+    .product-card h3,
+    .info-card h3,
+    .contact-card h3 {
+      font-size: 22px;
+      margin-bottom: 12px;
+      color: #ffffff;
+    }
+
+    .feature-card p,
+    .product-card p,
+    .info-card p,
+    .contact-card p {
+      color: #d8f3dc;
+      line-height: 1.7;
+      font-size: 15px;
+    }
+
+    /* Products */
+    .products-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 22px;
+    }
+
+    .product-card img {
       width: 100%;
       height: 210px;
       object-fit: cover;
-      display: block;
+      border-radius: 18px;
+      margin-bottom: 18px;
     }
 
-    .car-body {
-      padding: 22px;
-    }
-
-    .car-top {
-      display: flex;
-      justify-content: space-between;
-      gap: 12px;
-      align-items: start;
+    .product-card .tag {
+      display: inline-block;
+      padding: 7px 12px;
+      border-radius: 999px;
+      background: rgba(149, 213, 178, 0.16);
+      border: 1px solid rgba(149, 213, 178, 0.18);
+      font-size: 13px;
+      font-weight: 700;
+      color: #d8f3dc;
       margin-bottom: 12px;
     }
 
-    .car-top h3 {
-      font-size: 21px;
-      color: #0f172a;
-    }
-
-    .price {
-      color: #0284c7;
-      font-weight: 900;
-      white-space: nowrap;
-    }
-
-    .car-specs {
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 10px;
-      color: #64748b;
-      font-size: 14px;
-      margin: 16px 0 20px;
-    }
-
-    .badge {
-      display: inline-block;
-      background: #f1f5f9;
-      color: #334155;
-      padding: 6px 10px;
-      border-radius: 999px;
-      font-size: 13px;
-      font-weight: 700;
-      margin-bottom: 10px;
-    }
-
-    .about {
-      background: #ffffff;
-    }
-
+    /* About */
     .about-grid {
       display: grid;
-      grid-template-columns: 1.1fr 0.9fr;
-      gap: 40px;
+      grid-template-columns: 1fr 1fr;
+      gap: 34px;
       align-items: center;
     }
 
-    .about img {
+    .about-image {
+      position: relative;
+      perspective: 1000px;
+    }
+
+    .about-image img {
       width: 100%;
-      border-radius: 24px;
-      box-shadow: 0 20px 40px rgba(15, 23, 42, 0.16);
+      border-radius: 28px;
+      transform: rotateY(8deg) rotateX(3deg);
+      box-shadow: 0 28px 55px rgba(0, 0, 0, 0.32);
     }
 
-    .about h2 {
-      font-size: 36px;
+    .about-content h2 {
+      font-size: 38px;
       margin-bottom: 16px;
     }
 
-    .about p {
-      color: #64748b;
+    .about-content p {
+      color: #d8f3dc;
+      line-height: 1.8;
       margin-bottom: 16px;
     }
 
-    .stats {
+    .about-points {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
       gap: 14px;
-      margin-top: 24px;
+      margin-top: 16px;
     }
 
-    .stat {
-      background: #f8fafc;
+    .about-points div {
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.08);
+      padding: 14px 16px;
       border-radius: 16px;
-      padding: 16px;
+      color: #d8f3dc;
+    }
+
+    /* Stats */
+    .stats-grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 22px;
+    }
+
+    .stat-card {
       text-align: center;
-      border: 1px solid #e2e8f0;
+      background: rgba(255,255,255,0.08);
+      border: 1px solid rgba(255,255,255,0.08);
+      padding: 30px 18px;
+      border-radius: 24px;
+      backdrop-filter: blur(12px);
+      box-shadow: 0 18px 38px rgba(0,0,0,0.18);
     }
 
-    .stat strong {
-      display: block;
-      font-size: 25px;
-      color: #0284c7;
+    .stat-card h3 {
+      font-size: 34px;
+      color: #95d5b2;
+      margin-bottom: 8px;
     }
 
-    .stat span {
-      color: #64748b;
-      font-size: 13px;
-      font-weight: 700;
+    .stat-card p {
+      color: #d8f3dc;
+      font-size: 15px;
     }
 
+    /* Contact */
     .contact-grid {
       display: grid;
       grid-template-columns: 0.9fr 1.1fr;
       gap: 28px;
     }
 
-    .contact-info p {
-      color: #64748b;
-      margin-bottom: 14px;
-    }
-
     .contact-line {
-      background: #f8fafc;
-      padding: 14px;
-      border-radius: 14px;
+      background: rgba(255,255,255,0.06);
+      border: 1px solid rgba(255,255,255,0.08);
+      padding: 14px 16px;
+      border-radius: 16px;
       margin-bottom: 12px;
-      border: 1px solid #e2e8f0;
-      font-weight: 700;
+      color: #d8f3dc;
+      font-weight: 600;
     }
 
     form {
@@ -369,373 +491,381 @@
       gap: 14px;
     }
 
-    input,
-    select,
-    textarea {
+    input, textarea, select {
       width: 100%;
-      padding: 14px 15px;
-      border-radius: 12px;
-      border: 1px solid #cbd5e1;
+      padding: 15px 16px;
+      border-radius: 16px;
+      border: 1px solid rgba(255,255,255,0.12);
+      background: rgba(255,255,255,0.08);
+      color: #ffffff;
       font-size: 15px;
       outline: none;
     }
 
-    input:focus,
-    select:focus,
-    textarea:focus {
-      border-color: #38bdf8;
-      box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.2);
+    input::placeholder,
+    textarea::placeholder {
+      color: #d8f3dc;
+    }
+
+    input:focus, textarea:focus, select:focus {
+      border-color: #95d5b2;
+      box-shadow: 0 0 0 3px rgba(149, 213, 178, 0.14);
     }
 
     textarea {
-      min-height: 120px;
+      min-height: 130px;
       resize: vertical;
     }
 
     footer {
-      background: #0f172a;
-      color: #cbd5e1;
-      padding: 28px 0;
+      border-top: 1px solid rgba(255,255,255,0.08);
+      padding: 26px 0;
       text-align: center;
+      color: #d8f3dc;
+      background: rgba(0,0,0,0.15);
     }
 
-    footer strong {
-      color: #ffffff;
-    }
+    /* Responsive */
+    @media (max-width: 1080px) {
+      .products-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
 
-    @media (max-width: 900px) {
-      .features,
-      .cars-grid,
+      .grid-3,
+      .stats-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      .hero-grid,
       .about-grid,
       .contact-grid {
         grid-template-columns: 1fr;
       }
 
-      .nav {
+      .showcase-wrap {
+        margin-top: 10px;
+      }
+    }
+
+    @media (max-width: 720px) {
+      .navbar {
         flex-direction: column;
-        gap: 12px;
+        gap: 14px;
       }
 
       .nav-links {
         flex-wrap: wrap;
         justify-content: center;
-        gap: 14px;
+      }
+
+      .products-grid,
+      .grid-3,
+      .stats-grid {
+        grid-template-columns: 1fr;
       }
 
       .hero {
         min-height: auto;
-      }
-    }
-
-    @media (max-width: 520px) {
-      .stats {
-        grid-template-columns: 1fr;
+        padding-top: 60px;
       }
 
-      .car-specs {
-        grid-template-columns: 1fr;
+      .hero h1 {
+        font-size: 42px;
       }
 
-      section {
-        padding: 56px 0;
+      .section-title h2,
+      .about-content h2 {
+        font-size: 30px;
+      }
+
+      .showcase-card {
+        transform: none;
+      }
+
+      .about-image img {
+        transform: none;
       }
     }
   </style>
 </head>
 <body>
+  <div class="bg-blur bg1"></div>
+  <div class="bg-blur bg2"></div>
+  <div class="bg-blur bg3"></div>
+
   <header>
-    <div class="container nav">
-      <a href="#home" class="logo">AutoDrive <span>Motors</span></a>
+    <div class="container navbar">
+      <div class="logo">
+        VERIDIAN GLOBAL TRADE & COMPANY
+        <span>EST. GLOBAL AGRI EXPORTS</span>
+      </div>
+
       <nav class="nav-links">
         <a href="#home">Home</a>
-        <a href="#inventory">Inventory</a>
+        <a href="#products">Products</a>
         <a href="#about">About</a>
+        <a href="#why">Why Us</a>
         <a href="#contact">Contact</a>
       </nav>
     </div>
   </header>
 
-  <main>
-    <section class="hero" id="home">
-      <div class="container hero-content">
-        <span class="tagline">Quality Cars | Fair Prices | Easy Test Drives</span>
-        <h1>Find your next car with confidence.</h1>
-        <p>Browse our hand-picked inventory of sedans, SUVs, and sports cars. Every vehicle is inspected, clean, and ready for a test drive.</p>
-        <div class="hero-buttons">
-          <a href="#inventory" class="btn btn-primary">View Inventory</a>
-          <a href="#contact" class="btn btn-outline">Book Test Drive</a>
-        </div>
-      </div>
-    </section>
+  <section class="hero" id="home">
+    <div class="container hero-grid">
+      <div>
+        <div class="hero-tag">Global Agricultural Exports • Quality • Trust • Supply</div>
+        <h1>Premium agri exports for the world market.</h1>
+        <p>
+          VERIDIAN GLOBAL TRADE & COMPANY connects global buyers with high-quality agricultural exports.
+          We focus on reliable sourcing, premium standards, smooth logistics, and long-term trade partnerships.
+        </p>
 
-    <section>
-      <div class="container">
-        <div class="section-title">
-          <h2>Why choose us?</h2>
-          <p>Simple buying experience, transparent pricing, and reliable cars for every budget.</p>
+        <div class="hero-actions">
+          <a href="#products" class="btn btn-primary">Explore Products</a>
+          <a href="#contact" class="btn btn-outline">Get a Quote</a>
         </div>
 
-        <div class="features">
-          <div class="feature-card">
-            <div class="feature-icon">🚗</div>
-            <h3>Inspected Vehicles</h3>
-            <p>Each car is checked for quality, safety, and performance before it reaches our inventory.</p>
+        <div class="hero-stats">
+          <div class="hero-stat">
+            <h3>25+</h3>
+            <p>Export Markets</p>
           </div>
-
-          <div class="feature-card">
-            <div class="feature-icon">💰</div>
-            <h3>Transparent Pricing</h3>
-            <p>No hidden charges. Clear vehicle details, mileage, and pricing listed upfront.</p>
+          <div class="hero-stat">
+            <h3>100%</h3>
+            <p>Quality Focused</p>
           </div>
-
-          <div class="feature-card">
-            <div class="feature-icon">📅</div>
-            <h3>Easy Test Drive</h3>
-            <p>Send an inquiry and schedule a test drive at a convenient time.</p>
+          <div class="hero-stat">
+            <h3>24/7</h3>
+            <p>Trade Support</p>
           </div>
         </div>
       </div>
-    </section>
 
-    <section id="inventory">
-      <div class="container">
-        <div class="section-title">
-          <h2>Featured Inventory</h2>
-          <p>Filter by category and explore cars that fit your lifestyle.</p>
-        </div>
-
-        <div class="filters">
-          <button class="filter-btn active" data-filter="all">All</button>
-          <button class="filter-btn" data-filter="sedan">Sedan</button>
-          <button class="filter-btn" data-filter="suv">SUV</button>
-          <button class="filter-btn" data-filter="sports">Sports</button>
-        </div>
-
-        <div class="cars-grid">
-          <article class="car-card" data-category="sedan">
-            <img src="https://images.unsplash.com/photo-1550355291-bbee04a92027?auto=format&fit=crop&w=900&q=80" alt="Honda Accord sedan" />
-            <div class="car-body">
-              <span class="badge">Sedan</span>
-              <div class="car-top">
-                <h3>Honda Accord</h3>
-                <div class="price">$18,900</div>
-              </div>
-              <p>Comfortable, efficient, and perfect for daily driving.</p>
-              <div class="car-specs">
-                <span>Year: 2021</span>
-                <span>Mileage: 42k</span>
-                <span>Fuel: Gasoline</span>
-                <span>Trans: Auto</span>
-              </div>
-              <a href="#contact" class="btn btn-primary">Ask About This Car</a>
-            </div>
-          </article>
-
-          <article class="car-card" data-category="suv">
-            <img src="https://images.unsplash.com/photo-1519641471654-76ce0107ad1b?auto=format&fit=crop&w=900&q=80" alt="Toyota RAV4 SUV" />
-            <div class="car-body">
-              <span class="badge">SUV</span>
-              <div class="car-top">
-                <h3>Toyota RAV4</h3>
-                <div class="price">$24,500</div>
-              </div>
-              <p>Spacious SUV with strong reliability and family-friendly comfort.</p>
-              <div class="car-specs">
-                <span>Year: 2022</span>
-                <span>Mileage: 35k</span>
-                <span>Fuel: Hybrid</span>
-                <span>Trans: Auto</span>
-              </div>
-              <a href="#contact" class="btn btn-primary">Ask About This Car</a>
-            </div>
-          </article>
-
-          <article class="car-card" data-category="sports">
-            <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=900&q=80" alt="Ford Mustang sports car" />
-            <div class="car-body">
-              <span class="badge">Sports</span>
-              <div class="car-top">
-                <h3>Ford Mustang</h3>
-                <div class="price">$31,800</div>
-              </div>
-              <p>Bold design, powerful performance, and a fun driving experience.</p>
-              <div class="car-specs">
-                <span>Year: 2020</span>
-                <span>Mileage: 28k</span>
-                <span>Fuel: Gasoline</span>
-                <span>Trans: Manual</span>
-              </div>
-              <a href="#contact" class="btn btn-primary">Ask About This Car</a>
-            </div>
-          </article>
-
-          <article class="car-card" data-category="sedan">
-            <img src="https://images.unsplash.com/photo-1542362567-b07e54358753?auto=format&fit=crop&w=900&q=80" alt="BMW 3 Series sedan" />
-            <div class="car-body">
-              <span class="badge">Sedan</span>
-              <div class="car-top">
-                <h3>BMW 3 Series</h3>
-                <div class="price">$27,200</div>
-              </div>
-              <p>Premium sedan with luxury comfort and responsive handling.</p>
-              <div class="car-specs">
-                <span>Year: 2021</span>
-                <span>Mileage: 31k</span>
-                <span>Fuel: Gasoline</span>
-                <span>Trans: Auto</span>
-              </div>
-              <a href="#contact" class="btn btn-primary">Ask About This Car</a>
-            </div>
-          </article>
-
-          <article class="car-card" data-category="suv">
-            <img src="https://images.unsplash.com/photo-1503736334956-4c8f8e92946d?auto=format&fit=crop&w=900&q=80" alt="Jeep SUV" />
-            <div class="car-body">
-              <span class="badge">SUV</span>
-              <div class="car-top">
-                <h3>Jeep Wrangler</h3>
-                <div class="price">$29,600</div>
-              </div>
-              <p>Adventure-ready SUV built for city roads and weekend trails.</p>
-              <div class="car-specs">
-                <span>Year: 2019</span>
-                <span>Mileage: 47k</span>
-                <span>Fuel: Gasoline</span>
-                <span>Trans: Auto</span>
-              </div>
-              <a href="#contact" class="btn btn-primary">Ask About This Car</a>
-            </div>
-          </article>
-
-          <article class="car-card" data-category="sports">
-            <img src="https://images.unsplash.com/photo-1544636331-e26879cd4d9b?auto=format&fit=crop&w=900&q=80" alt="Chevrolet Camaro sports car" />
-            <div class="car-body">
-              <span class="badge">Sports</span>
-              <div class="car-top">
-                <h3>Chevrolet Camaro</h3>
-                <div class="price">$33,400</div>
-              </div>
-              <p>Aggressive styling, strong road presence, and exciting performance.</p>
-              <div class="car-specs">
-                <span>Year: 2021</span>
-                <span>Mileage: 22k</span>
-                <span>Fuel: Gasoline</span>
-                <span>Trans: Auto</span>
-              </div>
-              <a href="#contact" class="btn btn-primary">Ask About This Car</a>
-            </div>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="about" id="about">
-      <div class="container about-grid">
-        <div>
-          <h2>About AutoDrive Motors</h2>
-          <p>AutoDrive Motors is a simple, customer-focused car website built to help buyers quickly view available cars, compare important details, and contact the seller without confusion.</p>
-          <p>This free GitHub Pages website is ideal for a car dealer, car rental business, student project, or personal portfolio website.</p>
-          <div class="stats">
-            <div class="stat">
-              <strong>150+</strong>
-              <span>Cars Sold</span>
-            </div>
-            <div class="stat">
-              <strong>4.8★</strong>
-              <span>Customer Rating</span>
-            </div>
-            <div class="stat">
-              <strong>24hr</strong>
-              <span>Fast Response</span>
-            </div>
-          </div>
-        </div>
-        <img src="https://images.unsplash.com/photo-1562141961-b5d3611c36d8?auto=format&fit=crop&w=1000&q=80" alt="Car showroom" />
-      </div>
-    </section>
-
-    <section id="contact">
-      <div class="container">
-        <div class="section-title">
-          <h2>Contact Us</h2>
-          <p>Send your details and we will contact you about pricing, availability, or a test drive.</p>
-        </div>
-
-        <div class="contact-grid">
-          <div class="contact-card contact-info">
-            <h3>Visit or call</h3>
-            <p>Replace these sample details with your real business information before publishing.</p>
-            <div class="contact-line">📍 123 Auto Street, Your City</div>
-            <div class="contact-line">📞 +1 000-000-0000</div>
-            <div class="contact-line">✉️ contact@autodrive.com</div>
-            <div class="contact-line">🕒 Mon - Sat: 9:00 AM - 7:00 PM</div>
-          </div>
-
-          <div class="contact-card">
-            <form onsubmit="sendInquiry(event)">
-              <input type="text" id="name" placeholder="Your Name" required />
-              <input type="email" id="email" placeholder="Email Address" required />
-              <input type="tel" id="phone" placeholder="Phone Number" />
-              <select id="carInterest" required>
-                <option value="">Select Car Interest</option>
-                <option>Honda Accord</option>
-                <option>Toyota RAV4</option>
-                <option>Ford Mustang</option>
-                <option>BMW 3 Series</option>
-                <option>Jeep Wrangler</option>
-                <option>Chevrolet Camaro</option>
-              </select>
-              <textarea id="message" placeholder="Message / preferred test drive time"></textarea>
-              <button type="submit" class="btn btn-primary">Send Inquiry</button>
-            </form>
+      <div class="showcase-wrap">
+        <div class="showcase-card">
+          <img src="https://images.unsplash.com/photo-1501004318641-b39e6451bec6?auto=format&fit=crop&w=1200&q=80" alt="Agricultural exports" />
+          <h3>Fresh. Reliable. Global.</h3>
+          <p>
+            Export-ready agricultural products with strong packaging standards, dependable supply chains,
+            and consistent quality for international trade partners.
+          </p>
+          <div class="mini-badges">
+            <span>Rice</span>
+            <span>Spices</span>
+            <span>Grains</span>
+            <span>Fresh Produce</span>
           </div>
         </div>
       </div>
-    </section>
-  </main>
+    </div>
+  </section>
+
+  <section id="why">
+    <div class="container">
+      <div class="section-title">
+        <h2>Why choose Veridian?</h2>
+        <p>
+          Built with a premium modern frontend, this website highlights your export business with a
+          professional, trustworthy, and international look.
+        </p>
+      </div>
+
+      <div class="grid-3">
+        <div class="feature-card">
+          <div class="icon">🌍</div>
+          <h3>Global Reach</h3>
+          <p>
+            We serve international buyers with a focus on efficient export handling, documentation,
+            and timely shipments across key markets.
+          </p>
+        </div>
+
+        <div class="feature-card">
+          <div class="icon">✅</div>
+          <h3>Quality Assurance</h3>
+          <p>
+            Every batch is handled with care to ensure high standards in sourcing, packing,
+            and export-readiness for worldwide clients.
+          </p>
+        </div>
+
+        <div class="feature-card">
+          <div class="icon">🚢</div>
+          <h3>Reliable Logistics</h3>
+          <p>
+            From procurement to dispatch, we focus on smooth supply chain coordination and
+            dependable delivery performance.
+          </p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="products">
+    <div class="container">
+      <div class="section-title">
+        <h2>Featured Export Products</h2>
+        <p>
+          Showcase your major export categories here. You can later replace these with your actual
+          product list, images, and specifications.
+        </p>
+      </div>
+
+      <div class="products-grid">
+        <div class="product-card">
+          <img src="https://images.unsplash.com/photo-1586201375761-83865001e31c?auto=format&fit=crop&w=1000&q=80" alt="Rice" />
+          <span class="tag">Grains</span>
+          <h3>Premium Rice</h3>
+          <p>High-quality export rice sourced and packed for global wholesale and trade distribution.</p>
+        </div>
+
+        <div class="product-card">
+          <img src="https://images.unsplash.com/photo-1532336414038-cf19250c5757?auto=format&fit=crop&w=1000&q=80" alt="Spices" />
+          <span class="tag">Spices</span>
+          <h3>Natural Spices</h3>
+          <p>Fresh and aromatic spice products prepared for international food and retail markets.</p>
+        </div>
+
+        <div class="product-card">
+          <img src="https://images.unsplash.com/photo-1574323347407-f5e1ad6d020b?auto=format&fit=crop&w=1000&q=80" alt="Fruits and vegetables" />
+          <span class="tag">Fresh Produce</span>
+          <h3>Fruits & Vegetables</h3>
+          <p>Carefully selected produce with export-focused quality, grading, and packaging support.</p>
+        </div>
+
+        <div class="product-card">
+          <img src="https://images.unsplash.com/photo-1502741338009-cac2772e18bc?auto=format&fit=crop&w=1000&q=80" alt="Pulses" />
+          <span class="tag">Pulses</span>
+          <h3>Pulses & Beans</h3>
+          <p>Nutritious, well-sorted pulses and beans supplied for bulk export and trade customers.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="about">
+    <div class="container about-grid">
+      <div class="about-image">
+        <img src="https://images.unsplash.com/photo-1464226184884-fa280b87c399?auto=format&fit=crop&w=1200&q=80" alt="Agriculture field" />
+      </div>
+
+      <div class="about-content">
+        <h2>About Our Company</h2>
+        <p>
+          VERIDIAN GLOBAL TRADE & COMPANY is positioned as a trusted name in agricultural exports,
+          connecting quality products with international demand through efficient trade operations.
+        </p>
+        <p>
+          With a focus on consistency, transparency, and long-term business relationships, we help
+          buyers source dependable agricultural products from origin to destination.
+        </p>
+
+        <div class="about-points">
+          <div>✔ Strong sourcing network and supplier coordination</div>
+          <div>✔ Export-focused packaging and quality handling</div>
+          <div>✔ Professional communication and trade support</div>
+          <div>✔ Long-term business relationships with global buyers</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <div class="container">
+      <div class="section-title">
+        <h2>Business Highlights</h2>
+        <p>
+          Add credibility with strong business numbers and buyer confidence indicators.
+        </p>
+      </div>
+
+      <div class="stats-grid">
+        <div class="stat-card">
+          <h3>25+</h3>
+          <p>Countries Served</p>
+        </div>
+        <div class="stat-card">
+          <h3>50+</h3>
+          <p>Trusted Partners</p>
+        </div>
+        <div class="stat-card">
+          <h3>10K+</h3>
+          <p>Metric Tons Capacity</p>
+        </div>
+        <div class="stat-card">
+          <h3>99%</h3>
+          <p>Client Satisfaction</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="container">
+      <div class="section-title">
+        <h2>Contact Us</h2>
+        <p>
+          Send your product requirement, country destination, or quantity details and we’ll get back to you.
+        </p>
+      </div>
+
+      <div class="contact-grid">
+        <div class="contact-card">
+          <h3>Get in touch</h3>
+          <p>Replace the below sample information with your real company details.</p>
+          <div class="contact-line">📍 Your Office Address Here</div>
+          <div class="contact-line">📞 +1 000-000-0000</div>
+          <div class="contact-line">✉️ info@veridianglobaltrade.com</div>
+          <div class="contact-line">🌐 Global Agricultural Exports</div>
+        </div>
+
+        <div class="contact-card">
+          <h3>Request a Quote</h3>
+          <form onsubmit="sendMail(event)">
+            <input type="text" id="name" placeholder="Your Name" required />
+            <input type="email" id="email" placeholder="Your Email" required />
+            <input type="text" id="company" placeholder="Company Name" />
+            <select id="product" required>
+              <option value="">Select Product</option>
+              <option>Premium Rice</option>
+              <option>Natural Spices</option>
+              <option>Fruits & Vegetables</option>
+              <option>Pulses & Beans</option>
+            </select>
+            <textarea id="message" placeholder="Enter your requirement, quantity, and destination country"></textarea>
+            <button type="submit" class="btn btn-primary">Send Inquiry</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
 
   <footer>
     <div class="container">
-      <p><strong>AutoDrive Motors</strong> © 2026. Free static website for GitHub Pages.</p>
+      <p>© 2026 VERIDIAN GLOBAL TRADE & COMPANY — EST. GLOBAL AGRI EXPORTS. All rights reserved.</p>
     </div>
   </footer>
 
   <script>
-    const filterButtons = document.querySelectorAll('.filter-btn');
-    const carCards = document.querySelectorAll('.car-card');
-
-    filterButtons.forEach((button) => {
-      button.addEventListener('click', () => {
-        filterButtons.forEach((btn) => btn.classList.remove('active'));
-        button.classList.add('active');
-
-        const filter = button.dataset.filter;
-
-        carCards.forEach((card) => {
-          if (filter === 'all' || card.dataset.category === filter) {
-            card.style.display = 'block';
-          } else {
-            card.style.display = 'none';
-          }
-        });
-      });
-    });
-
-    function sendInquiry(event) {
+    function sendMail(event) {
       event.preventDefault();
 
-      const name = document.getElementById('name').value;
-      const email = document.getElementById('email').value;
-      const phone = document.getElementById('phone').value;
-      const car = document.getElementById('carInterest').value;
-      const message = document.getElementById('message').value;
+      const name = document.getElementById("name").value;
+      const email = document.getElementById("email").value;
+      const company = document.getElementById("company").value;
+      const product = document.getElementById("product").value;
+      const message = document.getElementById("message").value;
 
-      const subject = encodeURIComponent(`Car Inquiry - ${car}`);
+      const subject = encodeURIComponent("Inquiry from Website - " + product);
       const body = encodeURIComponent(
-        `Name: ${name}\nEmail: ${email}\nPhone: ${phone}\nCar Interest: ${car}\nMessage: ${message}`
+        "Name: " + name + "\n" +
+        "Email: " + email + "\n" +
+        "Company: " + company + "\n" +
+        "Product: " + product + "\n\n" +
+        "Requirement:\n" + message
       );
 
-      window.location.href = `mailto:contact@autodrive.com?subject=${subject}&body=${body}`;
+      window.location.href = "mailto:info@veridianglobaltrade.com?subject=" + subject + "&body=" + body;
     }
   </script>
 </body>
