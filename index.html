@@ -1,0 +1,742 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AutoDrive Motors | Premium Cars</title>
+  <meta name="description" content="AutoDrive Motors - Browse quality used cars, compare models, and book a test drive." />
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: Arial, Helvetica, sans-serif;
+    }
+
+    body {
+      background: #f5f7fb;
+      color: #111827;
+      line-height: 1.6;
+    }
+
+    a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .container {
+      width: min(1120px, 92%);
+      margin: auto;
+    }
+
+    header {
+      background: #0f172a;
+      color: #ffffff;
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      box-shadow: 0 4px 16px rgba(0, 0, 0, 0.18);
+    }
+
+    .nav {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 18px 0;
+    }
+
+    .logo {
+      font-size: 24px;
+      font-weight: 800;
+      letter-spacing: 0.5px;
+    }
+
+    .logo span {
+      color: #38bdf8;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 24px;
+      font-size: 15px;
+      font-weight: 600;
+    }
+
+    .nav-links a:hover {
+      color: #38bdf8;
+    }
+
+    .hero {
+      background: linear-gradient(rgba(15, 23, 42, 0.82), rgba(15, 23, 42, 0.82)),
+        url('https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?auto=format&fit=crop&w=1600&q=80') center/cover;
+      color: #ffffff;
+      min-height: 600px;
+      display: flex;
+      align-items: center;
+    }
+
+    .hero-content {
+      max-width: 720px;
+      padding: 80px 0;
+    }
+
+    .tagline {
+      display: inline-block;
+      background: rgba(56, 189, 248, 0.16);
+      border: 1px solid rgba(56, 189, 248, 0.45);
+      color: #bae6fd;
+      padding: 8px 14px;
+      border-radius: 999px;
+      margin-bottom: 18px;
+      font-weight: 700;
+      font-size: 14px;
+    }
+
+    .hero h1 {
+      font-size: clamp(38px, 6vw, 68px);
+      line-height: 1.05;
+      margin-bottom: 20px;
+    }
+
+    .hero p {
+      font-size: 18px;
+      color: #dbeafe;
+      max-width: 620px;
+      margin-bottom: 30px;
+    }
+
+    .hero-buttons {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+    }
+
+    .btn {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      padding: 13px 22px;
+      border-radius: 12px;
+      font-weight: 800;
+      border: none;
+      cursor: pointer;
+      transition: 0.25s ease;
+    }
+
+    .btn-primary {
+      background: #38bdf8;
+      color: #082f49;
+    }
+
+    .btn-primary:hover {
+      background: #7dd3fc;
+      transform: translateY(-2px);
+    }
+
+    .btn-outline {
+      border: 1px solid #ffffff;
+      color: #ffffff;
+    }
+
+    .btn-outline:hover {
+      background: #ffffff;
+      color: #0f172a;
+      transform: translateY(-2px);
+    }
+
+    section {
+      padding: 76px 0;
+    }
+
+    .section-title {
+      text-align: center;
+      margin-bottom: 42px;
+    }
+
+    .section-title h2 {
+      font-size: 36px;
+      margin-bottom: 10px;
+      color: #0f172a;
+    }
+
+    .section-title p {
+      color: #64748b;
+      max-width: 660px;
+      margin: auto;
+    }
+
+    .features {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 22px;
+    }
+
+    .feature-card,
+    .car-card,
+    .contact-card {
+      background: #ffffff;
+      border-radius: 20px;
+      padding: 24px;
+      box-shadow: 0 14px 30px rgba(15, 23, 42, 0.08);
+      border: 1px solid #e5e7eb;
+    }
+
+    .feature-icon {
+      width: 48px;
+      height: 48px;
+      border-radius: 14px;
+      background: #e0f2fe;
+      color: #0284c7;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 24px;
+      margin-bottom: 16px;
+    }
+
+    .feature-card h3 {
+      font-size: 20px;
+      margin-bottom: 8px;
+    }
+
+    .feature-card p {
+      color: #64748b;
+      font-size: 15px;
+    }
+
+    .filters {
+      display: flex;
+      justify-content: center;
+      flex-wrap: wrap;
+      gap: 12px;
+      margin-bottom: 32px;
+    }
+
+    .filter-btn {
+      padding: 10px 18px;
+      border: 1px solid #cbd5e1;
+      background: #ffffff;
+      border-radius: 999px;
+      cursor: pointer;
+      font-weight: 700;
+      color: #334155;
+    }
+
+    .filter-btn.active,
+    .filter-btn:hover {
+      background: #0f172a;
+      color: #ffffff;
+      border-color: #0f172a;
+    }
+
+    .cars-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .car-card {
+      overflow: hidden;
+      padding: 0;
+    }
+
+    .car-card img {
+      width: 100%;
+      height: 210px;
+      object-fit: cover;
+      display: block;
+    }
+
+    .car-body {
+      padding: 22px;
+    }
+
+    .car-top {
+      display: flex;
+      justify-content: space-between;
+      gap: 12px;
+      align-items: start;
+      margin-bottom: 12px;
+    }
+
+    .car-top h3 {
+      font-size: 21px;
+      color: #0f172a;
+    }
+
+    .price {
+      color: #0284c7;
+      font-weight: 900;
+      white-space: nowrap;
+    }
+
+    .car-specs {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10px;
+      color: #64748b;
+      font-size: 14px;
+      margin: 16px 0 20px;
+    }
+
+    .badge {
+      display: inline-block;
+      background: #f1f5f9;
+      color: #334155;
+      padding: 6px 10px;
+      border-radius: 999px;
+      font-size: 13px;
+      font-weight: 700;
+      margin-bottom: 10px;
+    }
+
+    .about {
+      background: #ffffff;
+    }
+
+    .about-grid {
+      display: grid;
+      grid-template-columns: 1.1fr 0.9fr;
+      gap: 40px;
+      align-items: center;
+    }
+
+    .about img {
+      width: 100%;
+      border-radius: 24px;
+      box-shadow: 0 20px 40px rgba(15, 23, 42, 0.16);
+    }
+
+    .about h2 {
+      font-size: 36px;
+      margin-bottom: 16px;
+    }
+
+    .about p {
+      color: #64748b;
+      margin-bottom: 16px;
+    }
+
+    .stats {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 14px;
+      margin-top: 24px;
+    }
+
+    .stat {
+      background: #f8fafc;
+      border-radius: 16px;
+      padding: 16px;
+      text-align: center;
+      border: 1px solid #e2e8f0;
+    }
+
+    .stat strong {
+      display: block;
+      font-size: 25px;
+      color: #0284c7;
+    }
+
+    .stat span {
+      color: #64748b;
+      font-size: 13px;
+      font-weight: 700;
+    }
+
+    .contact-grid {
+      display: grid;
+      grid-template-columns: 0.9fr 1.1fr;
+      gap: 28px;
+    }
+
+    .contact-info p {
+      color: #64748b;
+      margin-bottom: 14px;
+    }
+
+    .contact-line {
+      background: #f8fafc;
+      padding: 14px;
+      border-radius: 14px;
+      margin-bottom: 12px;
+      border: 1px solid #e2e8f0;
+      font-weight: 700;
+    }
+
+    form {
+      display: grid;
+      gap: 14px;
+    }
+
+    input,
+    select,
+    textarea {
+      width: 100%;
+      padding: 14px 15px;
+      border-radius: 12px;
+      border: 1px solid #cbd5e1;
+      font-size: 15px;
+      outline: none;
+    }
+
+    input:focus,
+    select:focus,
+    textarea:focus {
+      border-color: #38bdf8;
+      box-shadow: 0 0 0 3px rgba(56, 189, 248, 0.2);
+    }
+
+    textarea {
+      min-height: 120px;
+      resize: vertical;
+    }
+
+    footer {
+      background: #0f172a;
+      color: #cbd5e1;
+      padding: 28px 0;
+      text-align: center;
+    }
+
+    footer strong {
+      color: #ffffff;
+    }
+
+    @media (max-width: 900px) {
+      .features,
+      .cars-grid,
+      .about-grid,
+      .contact-grid {
+        grid-template-columns: 1fr;
+      }
+
+      .nav {
+        flex-direction: column;
+        gap: 12px;
+      }
+
+      .nav-links {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 14px;
+      }
+
+      .hero {
+        min-height: auto;
+      }
+    }
+
+    @media (max-width: 520px) {
+      .stats {
+        grid-template-columns: 1fr;
+      }
+
+      .car-specs {
+        grid-template-columns: 1fr;
+      }
+
+      section {
+        padding: 56px 0;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="container nav">
+      <a href="#home" class="logo">AutoDrive <span>Motors</span></a>
+      <nav class="nav-links">
+        <a href="#home">Home</a>
+        <a href="#inventory">Inventory</a>
+        <a href="#about">About</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="container hero-content">
+        <span class="tagline">Quality Cars | Fair Prices | Easy Test Drives</span>
+        <h1>Find your next car with confidence.</h1>
+        <p>Browse our hand-picked inventory of sedans, SUVs, and sports cars. Every vehicle is inspected, clean, and ready for a test drive.</p>
+        <div class="hero-buttons">
+          <a href="#inventory" class="btn btn-primary">View Inventory</a>
+          <a href="#contact" class="btn btn-outline">Book Test Drive</a>
+        </div>
+      </div>
+    </section>
+
+    <section>
+      <div class="container">
+        <div class="section-title">
+          <h2>Why choose us?</h2>
+          <p>Simple buying experience, transparent pricing, and reliable cars for every budget.</p>
+        </div>
+
+        <div class="features">
+          <div class="feature-card">
+            <div class="feature-icon">🚗</div>
+            <h3>Inspected Vehicles</h3>
+            <p>Each car is checked for quality, safety, and performance before it reaches our inventory.</p>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon">💰</div>
+            <h3>Transparent Pricing</h3>
+            <p>No hidden charges. Clear vehicle details, mileage, and pricing listed upfront.</p>
+          </div>
+
+          <div class="feature-card">
+            <div class="feature-icon">📅</div>
+            <h3>Easy Test Drive</h3>
+            <p>Send an inquiry and schedule a test drive at a convenient time.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="inventory">
+      <div class="container">
+        <div class="section-title">
+          <h2>Featured Inventory</h2>
+          <p>Filter by category and explore cars that fit your lifestyle.</p>
+        </div>
+
+        <div class="filters">
+          <button class="filter-btn active" data-filter="all">All</button>
+          <button class="filter-btn" data-filter="sedan">Sedan</button>
+          <button class="filter-btn" data-filter="suv">SUV</button>
+          <button class="filter-btn" data-filter="sports">Sports</button>
+        </div>
+
+        <div class="cars-grid">
+          <article class="car-card" data-category="sedan">
+            <img src="https://images.unsplash.com/photo-1550355291-bbee04a92027?auto=format&fit=crop&w=900&q=80" alt="Honda Accord sedan" />
+            <div class="car-body">
+              <span class="badge">Sedan</span>
+              <div class="car-top">
+                <h3>Honda Accord</h3>
+                <div class="price">$18,900</div>
+              </div>
+              <p>Comfortable, efficient, and perfect for daily driving.</p>
+              <div class="car-specs">
+                <span>Year: 2021</span>
+                <span>Mileage: 42k</span>
+                <span>Fuel: Gasoline</span>
+                <span>Trans: Auto</span>
+              </div>
+              <a href="#contact" class="btn btn-primary">Ask About This Car</a>
+            </div>
+          </article>
+
+          <article class="car-card" data-category="suv">
+            <img src="https://images.unsplash.com/photo-1519641471654-76ce0107ad1b?auto=format&fit=crop&w=900&q=80" alt="Toyota RAV4 SUV" />
+            <div class="car-body">
+              <span class="badge">SUV</span>
+              <div class="car-top">
+                <h3>Toyota RAV4</h3>
+                <div class="price">$24,500</div>
+              </div>
+              <p>Spacious SUV with strong reliability and family-friendly comfort.</p>
+              <div class="car-specs">
+                <span>Year: 2022</span>
+                <span>Mileage: 35k</span>
+                <span>Fuel: Hybrid</span>
+                <span>Trans: Auto</span>
+              </div>
+              <a href="#contact" class="btn btn-primary">Ask About This Car</a>
+            </div>
+          </article>
+
+          <article class="car-card" data-category="sports">
+            <img src="https://images.unsplash.com/photo-1503376780353-7e6692767b70?auto=format&fit=crop&w=900&q=80" alt="Ford Mustang sports car" />
+            <div class="car-body">
+              <span class="badge">Sports</span>
+              <div class="car-top">
+                <h3>Ford Mustang</h3>
+                <div class="price">$31,800</div>
+              </div>
+              <p>Bold design, powerful performance, and a fun driving experience.</p>
+              <div class="car-specs">
+                <span>Year: 2020</span>
+                <span>Mileage: 28k</span>
+                <span>Fuel: Gasoline</span>
+                <span>Trans: Manual</span>
+              </div>
+              <a href="#contact" class="btn btn-primary">Ask About This Car</a>
+            </div>
+          </article>
+
+          <article class="car-card" data-category="sedan">
+            <img src="https://images.unsplash.com/photo-1542362567-b07e54358753?auto=format&fit=crop&w=900&q=80" alt="BMW 3 Series sedan" />
+            <div class="car-body">
+              <span class="badge">Sedan</span>
+              <div class="car-top">
+                <h3>BMW 3 Series</h3>
+                <div class="price">$27,200</div>
+              </div>
+              <p>Premium sedan with luxury comfort and responsive handling.</p>
+              <div class="car-specs">
+                <span>Year: 2021</span>
+                <span>Mileage: 31k</span>
+                <span>Fuel: Gasoline</span>
+                <span>Trans: Auto</span>
+              </div>
+              <a href="#contact" class="btn btn-primary">Ask About This Car</a>
+            </div>
+          </article>
+
+          <article class="car-card" data-category="suv">
+            <img src="https://images.unsplash.com/photo-1503736334956-4c8f8e92946d?auto=format&fit=crop&w=900&q=80" alt="Jeep SUV" />
+            <div class="car-body">
+              <span class="badge">SUV</span>
+              <div class="car-top">
+                <h3>Jeep Wrangler</h3>
+                <div class="price">$29,600</div>
+              </div>
+              <p>Adventure-ready SUV built for city roads and weekend trails.</p>
+              <div class="car-specs">
+                <span>Year: 2019</span>
+                <span>Mileage: 47k</span>
+                <span>Fuel: Gasoline</span>
+                <span>Trans: Auto</span>
+              </div>
+              <a href="#contact" class="btn btn-primary">Ask About This Car</a>
+            </div>
+          </article>
+
+          <article class="car-card" data-category="sports">
+            <img src="https://images.unsplash.com/photo-1544636331-e26879cd4d9b?auto=format&fit=crop&w=900&q=80" alt="Chevrolet Camaro sports car" />
+            <div class="car-body">
+              <span class="badge">Sports</span>
+              <div class="car-top">
+                <h3>Chevrolet Camaro</h3>
+                <div class="price">$33,400</div>
+              </div>
+              <p>Aggressive styling, strong road presence, and exciting performance.</p>
+              <div class="car-specs">
+                <span>Year: 2021</span>
+                <span>Mileage: 22k</span>
+                <span>Fuel: Gasoline</span>
+                <span>Trans: Auto</span>
+              </div>
+              <a href="#contact" class="btn btn-primary">Ask About This Car</a>
+            </div>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section class="about" id="about">
+      <div class="container about-grid">
+        <div>
+          <h2>About AutoDrive Motors</h2>
+          <p>AutoDrive Motors is a simple, customer-focused car website built to help buyers quickly view available cars, compare important details, and contact the seller without confusion.</p>
+          <p>This free GitHub Pages website is ideal for a car dealer, car rental business, student project, or personal portfolio website.</p>
+          <div class="stats">
+            <div class="stat">
+              <strong>150+</strong>
+              <span>Cars Sold</span>
+            </div>
+            <div class="stat">
+              <strong>4.8★</strong>
+              <span>Customer Rating</span>
+            </div>
+            <div class="stat">
+              <strong>24hr</strong>
+              <span>Fast Response</span>
+            </div>
+          </div>
+        </div>
+        <img src="https://images.unsplash.com/photo-1562141961-b5d3611c36d8?auto=format&fit=crop&w=1000&q=80" alt="Car showroom" />
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="container">
+        <div class="section-title">
+          <h2>Contact Us</h2>
+          <p>Send your details and we will contact you about pricing, availability, or a test drive.</p>
+        </div>
+
+        <div class="contact-grid">
+          <div class="contact-card contact-info">
+            <h3>Visit or call</h3>
+            <p>Replace these sample details with your real business information before publishing.</p>
+            <div class="contact-line">📍 123 Auto Street, Your City</div>
+            <div class="contact-line">📞 +1 000-000-0000</div>
+            <div class="contact-line">✉️ contact@autodrive.com</div>
+            <div class="contact-line">🕒 Mon - Sat: 9:00 AM - 7:00 PM</div>
+          </div>
+
+          <div class="contact-card">
+            <form onsubmit="sendInquiry(event)">
+              <input type="text" id="name" placeholder="Your Name" required />
+              <input type="email" id="email" placeholder="Email Address" required />
+              <input type="tel" id="phone" placeholder="Phone Number" />
+              <select id="carInterest" required>
+                <option value="">Select Car Interest</option>
+                <option>Honda Accord</option>
+                <option>Toyota RAV4</option>
+                <option>Ford Mustang</option>
+                <option>BMW 3 Series</option>
+                <option>Jeep Wrangler</option>
+                <option>Chevrolet Camaro</option>
+              </select>
+              <textarea id="message" placeholder="Message / preferred test drive time"></textarea>
+              <button type="submit" class="btn btn-primary">Send Inquiry</button>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">
+      <p><strong>AutoDrive Motors</strong> © 2026. Free static website for GitHub Pages.</p>
+    </div>
+  </footer>
+
+  <script>
+    const filterButtons = document.querySelectorAll('.filter-btn');
+    const carCards = document.querySelectorAll('.car-card');
+
+    filterButtons.forEach((button) => {
+      button.addEventListener('click', () => {
+        filterButtons.forEach((btn) => btn.classList.remove('active'));
+        button.classList.add('active');
+
+        const filter = button.dataset.filter;
+
+        carCards.forEach((card) => {
+          if (filter === 'all' || card.dataset.category === filter) {
+            card.style.display = 'block';
+          } else {
+            card.style.display = 'none';
+          }
+        });
+      });
+    });
+
+    function sendInquiry(event) {
+      event.preventDefault();
+
+      const name = document.getElementById('name').value;
+      const email = document.getElementById('email').value;
+      const phone = document.getElementById('phone').value;
+      const car = document.getElementById('carInterest').value;
+      const message = document.getElementById('message').value;
+
+      const subject = encodeURIComponent(`Car Inquiry - ${car}`);
+      const body = encodeURIComponent(
+        `Name: ${name}\nEmail: ${email}\nPhone: ${phone}\nCar Interest: ${car}\nMessage: ${message}`
+      );
+
+      window.location.href = `mailto:contact@autodrive.com?subject=${subject}&body=${body}`;
+    }
+  </script>
+</body>
+</html>
